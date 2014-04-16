@@ -1,0 +1,16 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+html {
+    font-size: 16px;
+    line-height: 1.4;
+    background-color: #eee;
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #222;
+}
+
+h1 {
+    font-size: 1.4rem;
+}

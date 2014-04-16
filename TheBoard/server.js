@@ -5,6 +5,8 @@ var controllers = require("./controllers");
 controllers.init(app);
 app.set("view engine", "vash");
 
+// set the public static resource folder
+app.use(express.static(__dirname + "/public"));
 
 var server = http.createServer(app);
 

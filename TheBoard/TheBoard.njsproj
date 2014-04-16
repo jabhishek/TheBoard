@@ -36,6 +36,7 @@
     <Compile Include="data\index.js" />
     <Compile Include="data\seedData.js" />
     <Content Include="package.json" />
+    <Content Include="public\css\style.css" />
     <Content Include="README.md" />
     <Content Include="views\layout.vash" />
     <Content Include="views\index.vash" />
@@ -44,6 +45,8 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="data\" />
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
     <Folder Include="views\" />
     <Folder Include="views\jade\" />
   </ItemGroup>
