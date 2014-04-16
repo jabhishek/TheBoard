@@ -2,6 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/TheBoard/node_modules/express
-/TheBoard/node_modules/underscore
 /TheBoard/node_modules
