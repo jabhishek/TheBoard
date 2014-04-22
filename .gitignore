@@ -6,3 +6,4 @@
 /TheBoard/README.html
 *.suo
 /MongoDB
+/TheBoard/obj/Debug
