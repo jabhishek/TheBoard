@@ -2,13 +2,35 @@
     var seedData = require("./seedData");
     var database = require("./database");
     data.getNoteCategories = function (next) {
-        next(null, seedData.initialNotes);
+        database.getDb(function(err, db) {
+            if (err) {
+                console.log("Failed to retrieve database - " + err);
+                next(err, null);
+            } else {
+                console.log("Successfully retrieved database.");
+                db.notes.find().toArray(function (errNotes, results) {
+                    // Other example of find
+                    // db.notes.find({notes: { $size: 5 } }) - gets notes item that has size of 5
+                    // db.notes.find({notes: { $not: { $size: 5 } } }) - gets notes item that has size not equal to 5
+                    // db.notes.find({notes: { name: "People" } }) 
+                    // db.notes.aggregate({$project: {name: 1, notes:1} }, {$unwind: "$notes"}, {$match: {"notes.color": "green"}}).pretty()
+                    if (errNotes) {
+                        next(errNotes, null);
+                    } else {
+                        //console.log(results);
+                        next(null, results); 
+                    }
+                });
+            }
+        });
+
+   //         next(null, seedData.initialNotes);
     };
 
     function seedDatabase() {
         database.getDb(function(err, db) {
             if (err) {
-                console.log("Failed to seed database - " + err);
+                console.log("Failed to retrieve database - " + err);
             } else {
                 // check if data exists
                 db.notes.count(function(errCount, count) {
