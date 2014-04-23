@@ -33,17 +33,29 @@
                 console.log("Failed to retrieve database - " + err);
                 next(err, null);
             } else {
-                var cat = {
-                    name: categoryName,
-                    notes: []
-                };
-                db.notes.insert(cat, function(err) {
-                    if (err) {
-                        next(err);
+
+                db.notes.find({ name: categoryName }).count(function(errCount, count) {
+                    if (errCount) {
+
                     } else {
-                        next(null);
+                        if (count === 0) {
+                            var cat = {
+                                name: categoryName,
+                                notes: []
+                            };
+                            db.notes.insert(cat, function(err) {
+                                if (err) {
+                                    next(err);
+                                } else {
+                                    next(null);
+                                }
+                            });
+                        } else {
+                            next("Category already exists");
+                        }
                     }
                 });
+
             }
         });
     };
