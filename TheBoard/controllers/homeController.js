@@ -6,5 +6,19 @@
                 res.render("index", { title: "The Board", error: error, categories: results });
             });
         });
+
+        app.post("/newCategory", function (req, res) {
+            var categoryName = req.body.categoryName;
+            data.createNewCategory(categoryName, function (error) {
+                if (error) {
+                    console.log("Error creating new category.");
+                    res.redirect("/");
+                } else {
+                    //TODO - create form to add notes
+                    res.redirect("/notes/" + categoryName);
+                }
+            });
+
+        });
     };
 })(module.exports)

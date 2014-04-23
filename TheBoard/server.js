@@ -1,6 +1,12 @@
 ﻿var http = require('http');
 var express = require("express");
+var bodyParser = require('body-parser');
+
 var app = express();
+    // Opt into services
+app.use(bodyParser());
+
+
 var controllers = require("./controllers");
 controllers.init(app);
 app.set("view engine", "vash");
