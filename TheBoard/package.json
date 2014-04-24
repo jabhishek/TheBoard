@@ -17,6 +17,9 @@
     "express": "^4.0.0",
     "vash": "^0.7.11-3",
     "mongodb": "^1.4.2",
-    "body-parser": "^1.0.2"
+    "body-parser": "^1.0.2",
+    "connect-flash": "^0.1.1",
+    "express-session": "^1.0.3",
+    "cookie-parser": "^1.0.1"
   }
 }

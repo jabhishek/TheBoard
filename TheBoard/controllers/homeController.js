@@ -3,7 +3,12 @@
     homeController.init = function(app) {
         app.get("/", function(req, res) {
             data.getNoteCategories(function(error, results) {
-                res.render("index", { title: "The Board", error: error, categories: results });
+                res.render("index", {
+                    title: "The Board",
+                    error: error,
+                    categories: results,
+                    newCatError: req.flash("newCatError")
+            });
             });
         });
 
@@ -12,6 +17,7 @@
             data.createNewCategory(categoryName, function (error) {
                 if (error) {
                     console.log("Error creating new category - " + error);
+                    req.flash("newCatError", error);
                     res.redirect("/");
                 } else {
                     //TODO - create form to add notes
