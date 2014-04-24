@@ -9,7 +9,7 @@
                 next(err, null);
             } else {
                 console.log("Successfully retrieved database.");
-                db.notes.find().toArray(function (errNotes, results) {
+                db.notes.find().sort({name: 1}).toArray(function (errNotes, results) {
                     // Other example of find
                     // db.notes.find({notes: { $size: 5 } }) - gets notes item that has size of 5
                     // db.notes.find({notes: { $not: { $size: 5 } } }) - gets notes item that has size not equal to 5
@@ -66,6 +66,17 @@
                     }
                 });
 
+            }
+        });
+    };
+
+    data.addNote = function (categoryName, noteToInsert, next) {
+        database.getDb(function (err, db) {
+            if (err) {
+                console.log("Failed to retrieve database - " + err);
+                next(err, null);
+            } else {
+                db.notes.update({ name: categoryName }, { $push: { notes: noteToInsert } }, next);
             }
         });
     };

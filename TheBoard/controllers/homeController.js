@@ -21,7 +21,7 @@
                     res.redirect("/");
                 } else {
                     //TODO - create form to add notes
-                    res.redirect("/notes/" + categoryName);
+                    res.redirect("/notes/" + categoryName); 
                 }
             });
 
