@@ -42,6 +42,10 @@
     <Content Include=".bowerrc" />
     <Content Include="package.json" />
     <Content Include="public\css\style.css" />
+    <Content Include="public\images\note-blue.png" />
+    <Content Include="public\images\note-green.png" />
+    <Content Include="public\images\note-orange.png" />
+    <Content Include="public\images\note-yellow.png" />
     <Content Include="public\lib\underscore\.bower.json" />
     <Content Include="public\lib\underscore\.editorconfig" />
     <Content Include="public\lib\underscore\.gitignore" />
@@ -54,6 +58,7 @@
     <Content Include="views\layout.vash" />
     <Content Include="views\index.vash" />
     <Content Include="views\jade\index.jade" />
+    <Content Include="views\notes.vash" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -62,6 +67,7 @@
     <Folder Include="public\css\" />
     <Folder Include="public\lib\" />
     <Folder Include="public\lib\underscore\" />
+    <Folder Include="public\images\" />
     <Folder Include="views\" />
     <Folder Include="views\jade\" />
   </ItemGroup>
