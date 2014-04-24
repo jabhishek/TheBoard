@@ -3,7 +3,6 @@
     var data = require("../data");
     notesController.init = function(app) {
         app.get("/api/notes/:categoryName", function (req, res) {
-
             var categoryName = req.params.categoryName;
             data.getNotes(categoryName, function (err, notes) {
                 if (err) {

@@ -35,6 +35,7 @@
     <Compile Include="Controllers\notesController.js" />
     <Compile Include="data\database.js" />
     <Compile Include="gruntfile.js" />
+    <Compile Include="public\app\notesView.js" />
     <Compile Include="public\lib\underscore\underscore.js" />
     <Compile Include="server.js" />
     <Compile Include="data\index.js" />
@@ -68,6 +69,7 @@
     <Folder Include="public\lib\" />
     <Folder Include="public\lib\underscore\" />
     <Folder Include="public\images\" />
+    <Folder Include="public\app\" />
     <Folder Include="views\" />
     <Folder Include="views\jade\" />
   </ItemGroup>
