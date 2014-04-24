@@ -2,6 +2,7 @@
     var seedData = require("./seedData");
     var database = require("./database");
     data.getNoteCategories = function (next) {
+    
         database.getDb(function(err, db) {
             if (err) {
                 console.log("Failed to retrieve database - " + err);
@@ -23,8 +24,17 @@
                 });
             }
         });
+    };
 
-   //         next(null, seedData.initialNotes);
+    data.getNotes = function(categoryName, next) {
+        database.getDb(function(err, db) {
+            if (err) {
+                console.log("Failed to retrieve database - " + err);
+                next(err, null);
+            } else {
+                db.notes.findOne({ name: categoryName}, next);
+            }
+        });
     };
 
     data.createNewCategory = function (categoryName, next) {

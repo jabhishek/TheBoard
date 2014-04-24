@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="Controllers\index.js" />
     <Compile Include="Controllers\homeController.js" />
+    <Compile Include="Controllers\notesController.js" />
     <Compile Include="data\database.js" />
     <Compile Include="gruntfile.js" />
     <Compile Include="public\lib\underscore\underscore.js" />
